@@ -1,0 +1,502 @@
+.navbar {
+    width: 100%;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 28px;
+
+    background: rgba(5, 8, 15, 0.96);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(14px);
+}
+
+
+/* =====================================
+   BRAND
+===================================== */
+
+.brandSection {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    width: 215px;
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.logo {
+    width: 145px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =====================================
+   MOBILE MENU BUTTON
+===================================== */
+
+.mobileMenuButton {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    margin-right: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    cursor: pointer;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+}
+
+.mobileMenuButton span {
+    width: 18px;
+    height: 2px;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+}
+
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.navigation {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex: 1;
+}
+
+.navItem {
+    height: 100%;
+
+    min-width: 100px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    position: relative;
+
+    color: #8e96a8;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+.navItem:hover {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.navItem.active {
+    color: #f5c329;
+}
+
+
+/* Gold line underneath active item */
+
+.navItem.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+
+    bottom: 0;
+
+    height: 2px;
+
+    background: #f5c329;
+
+    box-shadow:
+        0 0 10px rgba(245, 195, 41, 0.45);
+
+    border-radius: 10px 10px 0 0;
+}
+
+
+/* =====================================
+   RIGHT ACTIONS
+===================================== */
+
+.actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-left: auto;
+}
+
+
+/* =====================================
+   LANGUAGE
+===================================== */
+
+.languageButton {
+    height: 42px;
+
+    padding: 0 13px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #e6e8ee;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.languageButton:hover {
+    background: rgba(255, 255, 255, 0.07);
+
+    border-color: rgba(245, 195, 41, 0.2);
+}
+
+
+/* =====================================
+   ICON BUTTON
+===================================== */
+
+.iconButton,
+.notificationButton {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    color: #c7ccd6;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.iconButton:hover,
+.notificationButton:hover {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border-color: rgba(245, 195, 41, 0.2);
+}
+
+
+/* =====================================
+   NOTIFICATION
+===================================== */
+
+.notificationBadge {
+    position: absolute;
+
+    top: -5px;
+    right: -4px;
+
+    min-width: 18px;
+    height: 18px;
+
+    padding: 0 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f5c329;
+
+    color: #080b12;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    border: 2px solid #05080f;
+}
+
+
+/* =====================================
+   PROFILE
+===================================== */
+
+.profileButton {
+    height: 46px;
+
+    padding: 0 12px 0 7px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 11px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.profileButton:hover {
+    background: rgba(255, 255, 255, 0.07);
+
+    border-color: rgba(245, 195, 41, 0.2);
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #303b4d,
+            #111824
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.profileName {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .brandSection {
+        width: 170px;
+    }
+
+    .logo {
+        width: 125px;
+    }
+
+    .navItem {
+        min-width: auto;
+
+        padding: 0 12px;
+    }
+
+    .navItem.active::after {
+        left: 12px;
+        right: 12px;
+    }
+
+    .navItem span {
+        font-size: 13px;
+    }
+
+    .languageButton span {
+        display: none;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 64px;
+
+        padding: 0 14px;
+    }
+
+    .brandSection {
+        width: auto;
+    }
+
+    .mobileMenuButton {
+        display: flex;
+    }
+
+    .logo {
+        width: 115px;
+    }
+
+    /* Hide desktop navigation */
+
+    .navigation {
+        display: none;
+    }
+
+    .actions {
+        gap: 6px;
+    }
+
+    .languageButton {
+        width: 40px;
+        padding: 0;
+
+        justify-content: center;
+    }
+
+    .languageButton svg:last-child {
+        display: none;
+    }
+
+    .iconButton,
+    .notificationButton {
+        width: 38px;
+        height: 38px;
+    }
+
+    .profileButton {
+        width: 38px;
+        height: 38px;
+
+        padding: 0;
+
+        justify-content: center;
+    }
+
+    .profileName,
+    .profileButton > svg {
+        display: none;
+    }
+
+    .avatar {
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 420px) {
+
+    .navbar {
+        padding: 0 10px;
+    }
+
+    .mobileMenuButton {
+        width: 36px;
+        height: 36px;
+
+        margin-right: 7px;
+    }
+
+    .logo {
+        width: 105px;
+    }
+
+    .iconButton,
+    .notificationButton,
+    .languageButton,
+    .profileButton {
+        width: 35px;
+        height: 35px;
+    }
+
+    .avatar {
+        width: 27px;
+        height: 27px;
+    }
+
+    .actions {
+        gap: 4px;
+    }
+
+}
