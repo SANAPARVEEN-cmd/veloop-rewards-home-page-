@@ -7,13 +7,9 @@ import styles from "./BalanceSection.module.css";
 const BalanceSection = () => {
     return (
         <section className={styles.balanceSection}>
-
             <VEBalanceCard />
-
             <SVEBalanceCard />
-
             <WalletCard />
-
         </section>
     );
 };
