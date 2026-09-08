@@ -6,3 +6,9 @@
 
     background: #05080f;
 }
+
+@media (max-width: 768px) {
+    .home {
+        min-height: calc(100vh - 64px);
+    }
+}

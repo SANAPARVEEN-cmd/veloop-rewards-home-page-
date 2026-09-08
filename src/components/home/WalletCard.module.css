@@ -57,6 +57,7 @@
     align-items: flex-start;
 
     min-width: 0;
+    flex: 1;
 }
 
 .heading {
@@ -191,8 +192,8 @@
     }
 
     .imageWrapper {
-        width: 120px;
-        height: 130px;
+        width: min(30vw, 120px);
+        height: min(33vw, 130px);
     }
 
     .textContent p {

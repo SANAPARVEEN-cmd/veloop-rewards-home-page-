@@ -16,7 +16,7 @@ import logo from "../../assets/images/logo/veloop-logo.png";
 
 import styles from "./Navbar.module.css";
 
-const Navbar = () => {
+const Navbar = ({ isSidebarOpen, onMenuToggle }) => {
     const navigationItems = [
         {
             label: "Home",
@@ -51,7 +51,9 @@ const Navbar = () => {
 <div className={styles.brandSection}>
     <button
         className={styles.mobileMenuButton}
-        aria-label="Open navigation menu"
+        aria-label={isSidebarOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={isSidebarOpen}
+        onClick={onMenuToggle}
     >
         <span></span>
         <span></span>

@@ -387,7 +387,7 @@
     }
 
     .logo {
-        width: 125px;
+        width: 48px;
     }
 
     .navItem {
@@ -433,7 +433,7 @@
     }
 
     .logo {
-        width: 115px;
+        width: 48px;
     }
 
     /* Hide desktop navigation */
@@ -503,7 +503,7 @@
     }
 
     .logo {
-        width: 105px;
+        width: 42px;
     }
 
     .iconButton,
@@ -523,4 +523,19 @@
         gap: 4px;
     }
 
+}
+
+@media (max-width: 360px) {
+    .brandText,
+    .languageButton {
+        display: none;
+    }
+
+    .brandSection {
+        flex: 1;
+    }
+
+    .actions {
+        margin-left: 0;
+    }
 }

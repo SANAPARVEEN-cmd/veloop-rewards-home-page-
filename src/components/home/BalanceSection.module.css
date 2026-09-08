@@ -34,3 +34,13 @@
         grid-column: auto;
     }
 }
+
+@media (min-width: 651px) and (max-width: 850px) {
+    .balanceSection {
+        grid-template-columns: 1fr;
+    }
+
+    .balanceSection > :last-child {
+        grid-column: auto;
+    }
+}

@@ -13,7 +13,7 @@ import {
 
 import styles from "./Sidebar.module.css";
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, onClose }) => {
     const menuItems = [
         {
             label: "Home",
@@ -59,7 +59,14 @@ const Sidebar = () => {
     ];
 
     return (
-        <aside className={styles.sidebar}>
+        <>
+            <button
+                className={`${styles.sidebarOverlay} ${isOpen ? styles.overlayVisible : ""}`}
+                aria-label="Close navigation menu"
+                onClick={onClose}
+            />
+
+            <aside className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ""}`}>
 
             {/* =================================
                 NAVIGATION
@@ -77,6 +84,7 @@ const Sidebar = () => {
                             className={`${styles.menuItem} ${
                                 item.active ? styles.active : ""
                             }`}
+                            onClick={onClose}
                         >
                             <Icon
                                 size={21}
@@ -154,7 +162,8 @@ const Sidebar = () => {
 
             </div>
 
-        </aside>
+            </aside>
+        </>
     );
 };
 
