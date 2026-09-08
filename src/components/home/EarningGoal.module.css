@@ -26,7 +26,7 @@
 
     color: #858d9c;
 
-    font-size: 9px;
+    font-size: 13px;
     font-weight: 600;
 
     letter-spacing: 0.7px;
@@ -41,21 +41,21 @@
 .amount strong {
     color: #ffffff;
 
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 700;
 }
 
 .amount span {
     color: #747d8d;
 
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 500;
 }
 
 .percentage {
     color: #f5c329;
 
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
 }
 

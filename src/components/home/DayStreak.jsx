@@ -1,13 +1,15 @@
-import { Flame } from "lucide-react";
+import streakFire from "../../assets/images/dashboard/streak-fire.png";
 import styles from "./DayStreak.module.css";
 
 const DayStreak = ({ streak = 7 }) => {
     return (
         <div className={styles.streak}>
+
             <div className={styles.iconWrapper}>
-                <Flame
-                    size={22}
-                    strokeWidth={2}
+                <img
+                    src={streakFire}
+                    alt="Day streak"
+                    className={styles.fireIcon}
                 />
             </div>
 
@@ -20,6 +22,7 @@ const DayStreak = ({ streak = 7 }) => {
                     Day Streak
                 </span>
             </div>
+
         </div>
     );
 };

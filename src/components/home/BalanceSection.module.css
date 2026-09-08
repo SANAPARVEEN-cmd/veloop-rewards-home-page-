@@ -1,0 +1,36 @@
+.balanceSection {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+
+    padding: 24px 30px;
+
+    box-sizing: border-box;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1000px) {
+    .balanceSection {
+        grid-template-columns: repeat(2, 1fr);
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 650px) {
+    .balanceSection {
+        grid-template-columns: 1fr;
+
+        padding: 20px 18px;
+    }
+}
