@@ -1,0 +1,137 @@
+.header {
+    width: 100%;
+
+    min-height: 150px;
+
+    padding: 28px 30px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+
+/* =====================================
+   WELCOME TEXT
+===================================== */
+
+.welcome {
+    min-width: 0;
+}
+
+.welcome h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 25px;
+    font-weight: 650;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.3px;
+}
+
+.welcome h1 span {
+    font-size: 22px;
+}
+
+.welcome p {
+    margin: 9px 0 0;
+
+    color: #7f8796;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================
+   RIGHT SIDE
+===================================== */
+
+.stats {
+    display: flex;
+    align-items: center;
+
+    gap: 26px;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1100px) {
+
+    .header {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .stats {
+        gap: 16px;
+    }
+
+    .goal {
+        width: 270px;
+    }
+
+}
+
+
+/* =====================================
+   SMALL SCREEN
+===================================== */
+
+@media (max-width: 850px) {
+
+    .header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .stats {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 22px 18px;
+    }
+
+    .welcome h1 {
+        font-size: 21px;
+    }
+
+    .stats {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    .goal {
+        width: 100%;
+    }
+
+}

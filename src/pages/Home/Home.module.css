@@ -1,0 +1,8 @@
+.home {
+    width: 100%;
+    min-height: calc(100vh - 76px);
+
+    box-sizing: border-box;
+
+    background: #05080f;
+}

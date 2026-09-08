@@ -1,0 +1,41 @@
+.layout {
+    min-height: 100vh;
+
+    background: #05080f;
+}
+
+.mainContent {
+    min-height: calc(100vh - 76px);
+
+    margin-left: 220px;
+
+    padding: 0;
+
+    background: #05080f;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1100px) {
+
+    .mainContent {
+        margin-left: 200px;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .mainContent {
+        margin-left: 0;
+    }
+
+}

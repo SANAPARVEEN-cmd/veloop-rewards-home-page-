@@ -1,8 +1,12 @@
+import WelcomeHeader from "../../components/home/WelcomeHeader";
+
+import styles from "./Home.module.css";
+
 const Home = () => {
     return (
-        <section>
-            <h1>Home Dashboard</h1>
-        </section>
+        <main className={styles.home}>
+            <WelcomeHeader />
+        </main>
     );
 };
 

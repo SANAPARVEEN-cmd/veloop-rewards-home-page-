@@ -1,0 +1,83 @@
+.goal {
+    width: 300px;
+
+    padding: 15px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.eyebrow {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #858d9c;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.7px;
+}
+
+.amount {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.amount strong {
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.amount span {
+    color: #747d8d;
+
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.percentage {
+    color: #f5c329;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.progressTrack {
+    width: 100%;
+    height: 5px;
+
+    margin-top: 12px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.progress {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: #f5c329;
+
+    transition: width 0.4s ease;
+}
