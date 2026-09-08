@@ -1,8 +1,8 @@
 const Home = () => {
     return (
-        <div>
+        <section>
             <h1>Home Dashboard</h1>
-        </div>
+        </section>
     );
 };
 

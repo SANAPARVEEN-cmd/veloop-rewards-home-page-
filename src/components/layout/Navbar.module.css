@@ -18,35 +18,59 @@
     backdrop-filter: blur(14px);
 }
 
-
 /* =====================================
    BRAND
 ===================================== */
 
 .brandSection {
+    width: 215px;
+    height: 100%;
     display: flex;
     align-items: center;
-
     flex-shrink: 0;
-
-    width: 215px;
 }
 
 .logoLink {
+    height: 100%;
     display: flex;
     align-items: center;
-
+    gap: 10px;
     text-decoration: none;
+    line-height: 1;
 }
 
 .logo {
-    width: 145px;
-    height: auto;
-
+    width: 48px;
+    height: 48px;
+    display: block;
     object-fit: contain;
+    object-position: center;
+    flex-shrink: 0;
 }
 
+/* VELOOP REWARDS text */
 
+.brandText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
+}
+
+.brandName {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.brandSubtitle {
+    margin-top: 4px;
+    color: #f5c329;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2.4px;
+}
 /* =====================================
    MOBILE MENU BUTTON
 ===================================== */

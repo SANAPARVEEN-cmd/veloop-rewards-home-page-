@@ -48,31 +48,29 @@ const Navbar = () => {
 
     return (
         <header className={styles.navbar}>
+<div className={styles.brandSection}>
+    <button
+        className={styles.mobileMenuButton}
+        aria-label="Open navigation menu"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-            {/* =========================
-                LEFT - BRAND
-            ========================== */}
-            <div className={styles.brandSection}>
+    <a href="/home" className={styles.logoLink}>
+        <img
+            src={logo}
+            alt="VELOOP Rewards"
+            className={styles.logo}
+        />
 
-                <button
-                    className={styles.mobileMenuButton}
-                    aria-label="Open navigation menu"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <a href="/home" className={styles.logoLink}>
-                    <img
-                        src={logo}
-                        alt="VELOOP Rewards"
-                        className={styles.logo}
-                    />
-                </a>
-
-            </div>
-
+        <div className={styles.brandText}>
+            <span className={styles.brandName}>VELOOP</span>
+            <span className={styles.brandSubtitle}>REWARDS</span>
+        </div>
+    </a>
+</div>
 
             {/* =========================
                 CENTER - NAVIGATION

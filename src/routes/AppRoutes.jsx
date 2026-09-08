@@ -9,9 +9,15 @@ const AppRoutes = () => {
 
             <Route element={<DashboardLayout />}>
 
-                <Route path="/" element={<Home />} />
+                <Route
+                    path="/"
+                    element={<Home />}
+                />
 
-                <Route path="/home" element={<Home />} />
+                <Route
+                    path="/home"
+                    element={<Home />}
+                />
 
             </Route>
 
