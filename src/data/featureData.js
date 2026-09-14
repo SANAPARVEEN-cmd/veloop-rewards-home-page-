@@ -13,7 +13,7 @@ export const featureData = [
     {
         id: 1,
         title: "Daily Streak",
-        description: "Maintain your streak and earn more VEs",
+        description: "Keep your streak active and earn VEs",
         buttonText: "Start",
         icon: Flame,
         accent: "orange",
@@ -21,7 +21,7 @@ export const featureData = [
     {
         id: 2,
         title: "Watch Ads",
-        description: "Watch ads and earn VEs",
+        description: "Watch short ads and earn VEs",
         buttonText: "Watch",
         icon: Play,
         accent: "purple",
@@ -29,7 +29,7 @@ export const featureData = [
     {
         id: 3,
         title: "Mine & Earn",
-        description: "Mine tokens and earn rewards",
+        description: "Mine tokens and grow your rewards",
         buttonText: "Mine Now",
         icon: Pickaxe,
         accent: "blue",
@@ -37,7 +37,7 @@ export const featureData = [
     {
         id: 4,
         title: "Tap & Earn",
-        description: "Tap to earn easy rewards",
+        description: "Tap and collect easy rewards",
         buttonText: "Tap Now",
         icon: Hand,
         accent: "green",
@@ -53,7 +53,7 @@ export const featureData = [
     {
         id: 6,
         title: "Giveaway",
-        description: "Participate in exciting giveaways",
+        description: "Join exciting giveaways and win",
         buttonText: "Join Now",
         icon: Gift,
         accent: "pink",
@@ -69,7 +69,7 @@ export const featureData = [
     {
         id: 8,
         title: "Contribution",
-        description: "Contribute and earn VEs",
+        description: "Contribute and earn valuable VEs",
         buttonText: "Contribute",
         icon: Users,
         accent: "cyan",

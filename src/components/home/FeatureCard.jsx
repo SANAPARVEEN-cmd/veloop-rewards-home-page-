@@ -13,7 +13,10 @@ const FeatureCard = ({
     return (
         <article className={`${styles.card} ${styles[accent]}`}>
             <div className={styles.iconWrapper}>
-                <Icon size={25} strokeWidth={1.8} />
+                <Icon
+                    size={25}
+                    strokeWidth={1.8}
+                />
             </div>
 
             <div className={styles.content}>
@@ -25,9 +28,14 @@ const FeatureCard = ({
                     type="button"
                     className={styles.actionButton}
                     onClick={onClick}
+                    aria-label={`${buttonText} - ${title}`}
                 >
                     <span>{buttonText}</span>
-                    <ArrowRight size={14} />
+
+                    <ArrowRight
+                        size={15}
+                        strokeWidth={1.8}
+                    />
                 </button>
             </div>
         </article>
