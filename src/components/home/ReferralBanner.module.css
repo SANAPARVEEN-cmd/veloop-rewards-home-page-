@@ -4,6 +4,7 @@
 
 .banner {
     width: calc(100% - 40px);
+    max-width: 100%;
     min-height: 220px;
 
     margin: 20px;

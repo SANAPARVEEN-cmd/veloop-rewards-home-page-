@@ -9,6 +9,8 @@ html {
 body {
     margin: 0;
 
+    min-width: 320px;
+
     background: var(--background);
 
     color: var(--text-primary);
@@ -19,6 +21,10 @@ body {
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
+}
+
+#root {
+    min-width: 0;
 }
 
 button,

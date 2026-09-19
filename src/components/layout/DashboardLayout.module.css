@@ -1,11 +1,15 @@
 .layout {
     min-height: 100vh;
 
+    min-width: 0;
+
     background: #05080f;
 }
 
 .mainContent {
     min-height: calc(100vh - 76px);
+
+    min-width: 0;
 
     margin-left: 220px;
 

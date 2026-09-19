@@ -1,5 +1,6 @@
 .goal {
-    width: 300px;
+    width: min(300px, 100%);
+    min-width: 0;
 
     padding: 15px 17px;
 

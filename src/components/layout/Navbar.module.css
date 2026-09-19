@@ -2,6 +2,8 @@
     width: 100%;
     height: 76px;
 
+    min-width: 0;
+
     display: flex;
     align-items: center;
 
@@ -190,6 +192,8 @@
 .actions {
     display: flex;
     align-items: center;
+
+    min-width: 0;
 
     gap: 10px;
 
@@ -411,6 +415,16 @@
 
 }
 
+@media (max-width: 1024px) and (min-width: 769px) {
+    .navigation {
+        display: none;
+    }
+
+    .brandSection {
+        width: auto;
+    }
+}
+
 
 /* =====================================
    MOBILE
@@ -444,6 +458,7 @@
 
     .actions {
         gap: 6px;
+        flex-shrink: 0;
     }
 
     .languageButton {
@@ -537,5 +552,11 @@
 
     .actions {
         margin-left: 0;
+    }
+}
+
+@media (min-width: 361px) and (max-width: 420px) {
+    .brandText {
+        display: none;
     }
 }
