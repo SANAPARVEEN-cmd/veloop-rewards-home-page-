@@ -14,39 +14,22 @@
 
     width: 100%;
 
-    /* Space from the right edge */
-    padding-right: 18px;
-
-    box-sizing: border-box;
-}
-/*
-   Earn More already has its own
-   spacing, so remove unnecessary
-   vertical margin when it sits here.
-*/
-
-.lowerDashboard > section:first-child {
-    min-width: 0;
-}
-
-.lowerDashboard {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        260px;
-
-    gap: 16px;
-
-    width: 100%;
-
+    /* Space around the lower dashboard */
     padding-left: 8px;
     padding-right: 18px;
 
     box-sizing: border-box;
 }
 
-/* Large tablet */
+/* Prevent Earn More from overflowing */
+.lowerDashboard > section:first-child {
+    min-width: 0;
+}
+
+/* =================================
+   LARGE TABLET
+================================= */
+
 @media (max-width: 1100px) {
     .lowerDashboard {
         grid-template-columns:
@@ -60,7 +43,10 @@
     }
 }
 
-/* Tablet */
+/* =================================
+   TABLET
+================================= */
+
 @media (max-width: 900px) {
     .lowerDashboard {
         grid-template-columns: 1fr;
@@ -72,7 +58,10 @@
     }
 }
 
-/* Mobile */
+/* =================================
+   MOBILE
+================================= */
+
 @media (max-width: 600px) {
     .lowerDashboard {
         grid-template-columns: 1fr;
@@ -81,5 +70,54 @@
 
         padding-left: 15px;
         padding-right: 15px;
+    }
+}
+/* =================================
+   CAMPAIGN + SOCIAL EARN
+================================= */
+
+.engagementGrid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(0, 0.85fr);
+
+    gap: 16px;
+
+    width: 100%;
+
+    margin-top: 16px;
+    margin-bottom: 24px;
+
+    padding-left: 8px;
+    padding-right: 18px;
+
+    box-sizing: border-box;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .engagementGrid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+        padding-left: 10px;
+        padding-right: 17px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .engagementGrid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+        padding-left: 17px;
+        padding-right: 17px;
     }
 }

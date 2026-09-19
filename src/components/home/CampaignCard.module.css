@@ -1,0 +1,228 @@
+.card {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(168, 85, 247, 0.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(18, 22, 32, 0.98),
+            rgba(9, 12, 20, 0.98)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.025),
+        0 8px 24px rgba(0, 0, 0, 0.14);
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.card:hover {
+    border-color: rgba(168, 85, 247, 0.22);
+    transform: translateY(-2px);
+}
+
+/* Decorative glow */
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    right: -55px;
+    bottom: -65px;
+
+    border-radius: 50%;
+
+    background: rgba(168, 85, 247, 0.08);
+
+    filter: blur(20px);
+
+    pointer-events: none;
+}
+
+/* Header */
+
+.header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 16px;
+}
+
+.iconWrapper {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    color: #e9bd43;
+
+    background: rgba(233, 189, 67, 0.10);
+
+    border: 1px solid rgba(233, 189, 67, 0.16);
+}
+
+.badge {
+    padding: 5px 8px;
+
+    border-radius: 999px;
+
+    color: rgba(230, 226, 238, 0.65);
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    letter-spacing: 0.03em;
+}
+
+/* Body */
+
+.body {
+    position: relative;
+
+    z-index: 1;
+}
+
+.body h2 {
+    margin: 0 0 6px;
+
+    color: #eeeaf4;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    letter-spacing: -0.01em;
+}
+
+.body p {
+    max-width: 420px;
+
+    margin: 0;
+
+    color: rgba(218, 215, 227, 0.50);
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Reward */
+
+.reward {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 13px;
+
+    color: #a98cff;
+
+    font-size: 13px;
+}
+
+.reward strong {
+    color: #e9bd43;
+
+    font-weight: 700;
+}
+
+/* Button */
+
+.button {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    margin-top: 18px;
+
+    padding: 8px 12px;
+
+    border: 1px solid rgba(233, 189, 67, 0.22);
+    border-radius: 8px;
+
+    color: #f0d37a;
+
+    background: rgba(233, 189, 67, 0.07);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.button:hover {
+    background: rgba(233, 189, 67, 0.12);
+
+    border-color: rgba(233, 189, 67, 0.35);
+
+    transform: translateX(2px);
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .card {
+        padding: 17px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .body h2 {
+        font-size: 15px;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
