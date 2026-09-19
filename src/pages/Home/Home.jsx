@@ -5,6 +5,8 @@ import EarnMore from "../../components/home/EarnMore";
 import RecentActivity from "../../components/home/RecentActivity";
 import CampaignCard from "../../components/home/CampaignCard";
 import SocialEarn from "../../components/home/SocialEarn";
+import SupportCard from "../../components/home/SupportCard";
+import SecurityNotice from "../../components/home/SecurityNotice";
 
 import styles from "./Home.module.css";
 
@@ -26,6 +28,10 @@ const Home = () => {
                 <CampaignCard />
                 <SocialEarn />
             </div>
+
+            <SupportCard />
+
+            <SecurityNotice />
         </main>
     );
 };
