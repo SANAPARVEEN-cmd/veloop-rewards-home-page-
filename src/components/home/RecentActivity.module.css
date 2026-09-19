@@ -1,0 +1,291 @@
+.card {
+    width: 100%;
+    height: 88%;
+    min-width: 0;
+margin-top : 38px;
+    padding: 16px 14px;
+ margin-right:25px;
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 22, 32, 0.98),
+            rgba(9, 12, 20, 0.98)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.025),
+        0 8px 24px rgba(0, 0, 0, 0.15);
+
+    overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1px 2px 30px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.header h2 {
+    margin: 0;
+
+    color: #ebe8f2;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    letter-spacing: 0.01em;
+}
+
+.viewAll {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    color: #e9bd43;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.viewAll:hover {
+    color: #ffd86a;
+    transform: translateX(2px);
+}
+
+/* =========================
+   ACTIVITY LIST
+========================= */
+
+.activityList {
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   ACTIVITY ITEM
+========================= */
+
+.activityItem {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        34px
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 9px;
+
+    min-height: 68px;
+
+    padding: 9px 1px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+
+    transition:
+        background 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+.activityItem:last-child {
+    border-bottom: none;
+}
+
+.activityItem:hover {
+    padding-left: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025),
+            transparent
+        );
+}
+
+/* =========================
+   ICON
+========================= */
+
+.iconWrapper {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    flex-shrink: 0;
+}
+
+/* =========================
+   ICON ACCENTS
+========================= */
+
+.green {
+    color: #68dc72;
+
+    background: rgba(86, 215, 99, 0.10);
+
+    border: 1px solid rgba(86, 215, 99, 0.18);
+}
+
+.purple {
+    color: #b16cff;
+
+    background: rgba(168, 85, 247, 0.11);
+
+    border: 1px solid rgba(168, 85, 247, 0.20);
+}
+
+.pink {
+    color: #ed5d9b;
+
+    background: rgba(237, 93, 155, 0.10);
+
+    border: 1px solid rgba(237, 93, 155, 0.18);
+}
+
+.orange {
+    color: #ff9d32;
+
+    background: rgba(255, 157, 50, 0.10);
+
+    border: 1px solid rgba(255, 157, 50, 0.18);
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.details {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.details h3 {
+    margin: 0 0 2px;
+
+    color: #e9e6ef;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.details p {
+    margin: 0 0 2px;
+
+    color: rgba(218, 215, 227, 0.48);
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.details span {
+    color: rgba(218, 215, 227, 0.40);
+
+    font-size: 10px;
+
+    line-height: 1.3;
+}
+
+/* =========================
+   AMOUNT
+========================= */
+
+.amount {
+    align-self: flex-start;
+
+    padding-top: 3px;
+
+    color: #6cda71;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+    .card {
+        padding: 16px;
+    }
+
+    .activityItem {
+        min-height: 64px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+    .card {
+        padding: 15px 13px;
+
+        border-radius: 14px;
+    }
+
+    .activityItem {
+        min-height: 66px;
+
+        grid-template-columns:
+            36px
+            minmax(0, 1fr)
+            auto;
+
+        gap: 9px;
+    }
+
+    .details h3 {
+        font-size: 11px;
+    }
+
+    .amount {
+        font-size: 10px;
+    }
+}

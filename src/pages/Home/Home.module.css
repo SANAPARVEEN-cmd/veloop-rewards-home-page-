@@ -1,14 +1,85 @@
-.home {
+/* =================================
+   LOWER DASHBOARD
+   Earn More + Recent Activity
+================================= */
+
+.lowerDashboard {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        260px;
+
+    gap: 16px;
+
     width: 100%;
-    min-height: calc(100vh - 76px);
+
+    /* Space from the right edge */
+    padding-right: 18px;
 
     box-sizing: border-box;
+}
+/*
+   Earn More already has its own
+   spacing, so remove unnecessary
+   vertical margin when it sits here.
+*/
 
-    background: #05080f;
+.lowerDashboard > section:first-child {
+    min-width: 0;
 }
 
-@media (max-width: 768px) {
-    .home {
-        min-height: calc(100vh - 64px);
+.lowerDashboard {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        260px;
+
+    gap: 16px;
+
+    width: 100%;
+
+    padding-left: 8px;
+    padding-right: 18px;
+
+    box-sizing: border-box;
+}
+
+/* Large tablet */
+@media (max-width: 1100px) {
+    .lowerDashboard {
+        grid-template-columns:
+            minmax(0, 1fr)
+            240px;
+
+        gap: 14px;
+
+        padding-left: 6px;
+        padding-right: 14px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .lowerDashboard {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        padding-left: 6px;
+        padding-right: 14px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .lowerDashboard {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }

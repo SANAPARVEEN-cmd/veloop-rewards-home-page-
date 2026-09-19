@@ -1,0 +1,55 @@
+import {
+    Gift,
+    Play,
+    Users,
+    Flame,
+    Hand,
+} from "lucide-react";
+
+export const activityData = [
+    {
+        id: 1,
+        title: "Daily Bonus",
+        description: "Daily reward",
+        amount: "+120 VEs",
+        time: "2 mins ago",
+        icon: Gift,
+        accent: "green",
+    },
+    {
+        id: 2,
+        title: "Watch Ads",
+        description: "Ad reward",
+        amount: "+80 VEs",
+        time: "15 mins ago",
+        icon: Play,
+        accent: "purple",
+    },
+    {
+        id: 3,
+        title: "Referral Reward",
+        description: "Friend referral",
+        amount: "+250 VEs",
+        time: "1 hour ago",
+        icon: Users,
+        accent: "pink",
+    },
+    {
+        id: 4,
+        title: "Streak Bonus",
+        description: "7 day streak",
+        amount: "+100 VEs",
+        time: "3 hours ago",
+        icon: Flame,
+        accent: "orange",
+    },
+    {
+        id: 5,
+        title: "Tap & Earn",
+        description: "Task completed",
+        amount: "+60 VEs",
+        time: "5 hours ago",
+        icon: Hand,
+        accent: "green",
+    },
+];
