@@ -48,7 +48,8 @@ VELOOP Rewards provides a centralized dashboard where users can:
 The interface is designed around a **dark premium visual system** with subtle glass effects, controlled accent colors, rounded cards, and responsive layouts.
 
 ---
-
+### Live URL
+<a href = "https://veloop-rewards-tawny.vercel.app/">VIEW FULL PROJECT DEMO </a>
 # 🚀 Features
 
 ## Dashboard
