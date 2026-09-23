@@ -1,479 +1,322 @@
 /* =========================================================
-   MAIN REFERRAL BANNER
+   REFER & EARN — FEATURE BANNER
 ========================================================= */
 
 .banner {
-    width: calc(100% - 40px);
-    max-width: 100%;
-    min-height: 220px;
-
-    margin: 20px;
-
-    display: grid;
-    grid-template-columns: minmax(0, 45%) minmax(0, 55%);
-
-    box-sizing: border-box;
     position: relative;
 
-    border: 1px solid rgba(190, 160, 255, 0.13);
-    border-radius: 20px;
+    width: calc(100% - 36px);
+    min-height: 420px;
+
+    margin: 26px 18px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(169, 132, 255, 0.2);
+    border-radius: 26px;
 
     background:
         radial-gradient(
-            circle at 7% 50%,
-            rgba(118, 80, 210, 0.14),
+            circle at 72% 45%,
+            rgba(137, 91, 221, 0.16),
             transparent 31%
         ),
         radial-gradient(
-            circle at 78% 0%,
-            rgba(152, 96, 233, 0.07),
-            transparent 34%
+            circle at 93% 12%,
+            rgba(255, 204, 76, 0.08),
+            transparent 24%
         ),
         linear-gradient(
-            135deg,
-            #0d101b 0%,
-            #121525 52%,
+            125deg,
+            #0b0e17 0%,
+            #111525 52%,
             #17142a 100%
         );
 
     box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.035);
-
-    overflow: hidden;
-
-    transition:
-        border-color 300ms ease,
-        box-shadow 300ms ease;
-}
-
-
-.banner::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle at 34% 50%,
-            rgba(118, 80, 210, 0.045),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 96% 100%,
-            rgba(184, 120, 255, 0.045),
-            transparent 28%
-        );
-}
-
-
-.banner:hover {
-    border-color: rgba(184, 120, 255, 0.2);
-
-    box-shadow:
-        0 20px 48px rgba(0, 0, 0, 0.3),
-        0 0 35px rgba(118, 80, 210, 0.055),
+        0 22px 60px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.045);
+
+    isolation: isolate;
 }
 
 
 /* =========================================================
-   LEFT SECTION
-   NOT A CARD
+   BACKGROUND DECORATION
 ========================================================= */
 
-.referralIntro {
-    min-width: 0;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 40%)
-        minmax(0, 60%);
-
-    align-items: center;
-
-    /*
-        IMPORTANT:
-        Extra right padding creates visible breathing
-        space between the heading/text and Progress card.
-    */
-    padding: 18px 32px 18px 20px;
-
-    box-sizing: border-box;
-
-    position: relative;
-    z-index: 1;
-}
-
-
-/* =========================================================
-   REFERRAL IMAGE
-========================================================= */
-
-.imageWrapper {
-    width: 100%;
-    height: 175px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    min-width: 0;
-
-    position: relative;
-}
-
-
-.imageWrapper::before {
-    content: "";
-
+.backgroundGlow {
     position: absolute;
 
-    width: 125px;
-    height: 125px;
+    width: 420px;
+    height: 420px;
+
+    top: -190px;
+    right: 7%;
 
     border-radius: 50%;
 
-    background: rgba(118, 80, 210, 0.13);
+    background: rgba(137, 91, 221, 0.09);
 
-    filter: blur(42px);
+    filter: blur(85px);
 
     pointer-events: none;
+
+    z-index: -1;
 }
 
+.backgroundGrid {
+    position: absolute;
+    inset: 0;
 
-.referralImage {
-    position: relative;
-    z-index: 1;
+    opacity: 0.16;
 
-    width: 100%;
-    max-width: 165px;
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
 
-    height: auto;
-    max-height: 165px;
+    background-size: 34px 34px;
 
-    object-fit: contain;
+    mask-image: linear-gradient(
+        90deg,
+        transparent,
+        black 45%,
+        black 75%,
+        transparent
+    );
 
-    display: block;
+    pointer-events: none;
 
-    filter:
-        drop-shadow(0 12px 22px rgba(0, 0, 0, 0.35));
-
-    transition:
-        transform 300ms ease,
-        filter 300ms ease;
-}
-
-
-.banner:hover .referralImage {
-    transform: translateY(-4px) scale(1.025);
-
-    filter:
-        drop-shadow(0 16px 28px rgba(0, 0, 0, 0.42));
+    z-index: -1;
 }
 
 
 /* =========================================================
-   LEFT TEXT
+   MAIN CONTENT
 ========================================================= */
 
-.textContent {
+.mainContent {
+    position: relative;
+    z-index: 3;
+
     min-width: 0;
+
+    padding: 42px 20px 42px 42px;
 
     display: flex;
     flex-direction: column;
-
-    align-items: flex-start;
     justify-content: center;
-
-    /*
-        Additional internal breathing room.
-    */
-    padding-left: 8px;
-    padding-right: 12px;
+    align-items: flex-start;
 }
 
 
-.textContent h2 {
-    margin: 0 24px 11px 0;
+/* =========================================================
+   EYEBROW
+========================================================= */
 
-    /*
-        Slightly larger but still compact enough
-        to remain on one line.
-    */
-    font-size: 21px;
-    line-height: 1.2;
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 
-    font-weight: 700;
+    margin-bottom: 13px;
 
-    letter-spacing: -0.65px;
+    color: #b993ff;
 
-    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 750;
 
+    letter-spacing: 0.17em;
+}
+
+.eyebrowDot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #b993ff;
+
+    box-shadow:
+        0 0 0 4px rgba(185, 147, 255, 0.08),
+        0 0 14px rgba(185, 147, 255, 0.65);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.title {
+    margin: 0;
+
+    max-width: 570px;
+
+    color: #f7f5fb;
+
+    font-size: clamp(31px, 3.1vw, 46px);
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    letter-spacing: -1.6px;
+}
+
+.title span {
     background:
         linear-gradient(
             100deg,
-            #f8f8fb 0%,
-            #eee8ff 55%,
-            #cda9ff 100%
+            #ffffff 0%,
+            #d8c5ff 48%,
+            #b17aff 100%
         );
 
     -webkit-background-clip: text;
     background-clip: text;
-
     -webkit-text-fill-color: transparent;
 }
 
 
-.textContent p {
-    margin: 0 18px 18px 0;
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
-    max-width: 365px;
+.description {
+    max-width: 485px;
 
-    /*
-        Increased from 12px so it is easier to read.
-    */
-    font-size: 13px;
-    line-height: 1.6;
+    margin: 17px 0 25px;
 
-    color: #a8adbd;
+    color: rgba(218, 215, 227, 0.6);
 
-    letter-spacing: 0.05px;
+    font-size: 14px;
+    line-height: 1.7;
 }
 
 
 /* =========================================================
-   REFER BUTTON
+   REFERRAL JOURNEY
 ========================================================= */
 
-.referButton {
-    display: inline-flex;
+.journey {
+    width: min(100%, 500px);
 
-    align-items: center;
-    justify-content: center;
-
-    gap: 8px;
-
-    padding: 10px 17px;
-
-    border: 1px solid rgba(184, 120, 255, 0.32);
-    border-radius: 9px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(118, 80, 210, 0.97),
-            rgba(152, 96, 233, 0.95)
-        );
-
-    color: #ffffff;
-
-    font-size: 13px;
-    font-weight: 650;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 7px 18px rgba(118, 80, 210, 0.22);
-
-    transition:
-        transform 250ms ease,
-        box-shadow 250ms ease,
-        border-color 250ms ease,
-        background 250ms ease;
-}
-
-
-.referButton:hover {
-    transform: translateY(-2px);
-
-    border-color: rgba(210, 180, 255, 0.58);
-
-    background:
-        linear-gradient(
-            135deg,
-            #7650d2,
-            #a064ed
-        );
-
-    box-shadow:
-        0 10px 25px rgba(118, 80, 210, 0.34);
-}
-
-
-.referButton:active {
-    transform: translateY(0);
-}
-
-
-.referButton svg {
-    flex-shrink: 0;
-
-    transition: transform 250ms ease;
-}
-
-
-.referButton:hover svg {
-    transform: translateX(3px);
-}
-
-
-/* =========================================================
-   RIGHT SIDE
-========================================================= */
-
-.rightContent {
-    min-width: 0;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.1fr)
-        minmax(0, 0.9fr);
-
-    gap: 13px;
-
-    /*
-        Slightly more left padding creates a clean
-        visual separation from the left content.
-    */
-    padding: 10px 12px 10px 8px;
+    padding: 17px 18px 15px;
 
     box-sizing: border-box;
-
-    position: relative;
-    z-index: 1;
-}
-
-
-/* =========================================================
-   INNER CARDS
-========================================================= */
-
-.progressSection,
-.rewardSection {
-    min-width: 0;
-    min-height: 0;
-
-    box-sizing: border-box;
-
-    position: relative;
 
     border: 1px solid rgba(255, 255, 255, 0.075);
     border-radius: 15px;
 
     background:
-        radial-gradient(
-            circle at 100% 0%,
-            rgba(118, 80, 210, 0.1),
-            transparent 42%
-        ),
         linear-gradient(
             145deg,
-            rgba(255, 255, 255, 0.058),
+            rgba(255, 255, 255, 0.055),
             rgba(255, 255, 255, 0.018)
         );
 
     box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.12),
         inset 0 1px 0 rgba(255, 255, 255, 0.025);
-
-    transition:
-        transform 250ms ease,
-        border-color 250ms ease,
-        box-shadow 250ms ease,
-        background 250ms ease;
-}
-
-
-.progressSection:hover,
-.rewardSection:hover {
-    transform: translateY(-2px);
-
-    border-color: rgba(184, 120, 255, 0.23);
-
-    box-shadow:
-        0 12px 28px rgba(0, 0, 0, 0.17),
-        0 0 22px rgba(118, 80, 210, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 
 /* =========================================================
-   PROGRESS CARD
+   JOURNEY HEADER
 ========================================================= */
 
-.progressSection {
-    padding: 18px;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-}
-
-
-/* Header */
-
-.cardHeader {
+.journeyHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    gap: 16px;
+
+    margin-bottom: 15px;
+}
+
+.journeyHeader > div {
+    display: flex;
+    align-items: baseline;
     gap: 10px;
-
-    margin-bottom: 13px;
 }
 
+.journeyLabel {
+    color: #878d9d;
 
-.cardHeader span {
-    min-width: 0;
-
-    font-size: 13px;
-    font-weight: 600;
-
-    color: rgba(247, 247, 250, 0.76);
-
-    white-space: nowrap;
-}
-
-
-.cardHeader strong {
-    flex-shrink: 0;
-
-    font-size: 15px;
+    font-size: 9px;
     font-weight: 700;
 
-    color: #f7f7fa;
+    letter-spacing: 0.12em;
+}
 
-    white-space: nowrap;
+.journeyCount {
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.journeyCount span {
+    color: #858b9b;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.percentage {
+    color: #b993ff;
+
+    font-size: 12px;
+    font-weight: 750;
 }
 
 
 /* =========================================================
-   PROGRESS BAR
+   MILESTONES
 ========================================================= */
 
-.progressTrack {
-    width: 100%;
-    height: 9px;
+.milestones {
+    position: relative;
+
+    height: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 3px;
+}
+
+.milestoneLine {
+    position: absolute;
+
+    top: 50%;
+    left: 8px;
+    right: 8px;
+
+    height: 4px;
+
+    transform: translateY(-50%);
 
     overflow: hidden;
 
     border-radius: 999px;
 
-    background: rgba(255, 255, 255, 0.075);
-
-    box-shadow:
-        inset 0 1px 2px rgba(0, 0, 0, 0.22);
+    background: rgba(255, 255, 255, 0.07);
 }
 
-
-.progress {
+.milestoneProgress {
     height: 100%;
 
     border-radius: inherit;
@@ -481,592 +324,765 @@
     background:
         linear-gradient(
             90deg,
-            #7650d2 0%,
-            #9860e9 55%,
-            #b878ff 100%
+            #7650d2,
+            #a875ef,
+            #d09aff
         );
 
     box-shadow:
-        0 0 11px rgba(152, 96, 233, 0.24);
+        0 0 12px rgba(168, 117, 239, 0.38);
 
-    transition: width 500ms ease;
+    transition:
+        width 600ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.milestone {
+    position: relative;
+    z-index: 2;
 
-/* =========================================================
-   PERCENTAGE
-========================================================= */
-
-.progressPercentage {
-    margin-top: 8px;
-
-    font-size: 13px;
-    font-weight: 700;
-
-    color: #b679ff;
-}
-
-
-/* =========================================================
-   PROGRESS MESSAGE
-========================================================= */
-
-.progressMessage {
-    margin: 7px 0 13px;
-
-    font-size: 11px;
-    line-height: 1.5;
-
-    color: #9298a9;
-}
-
-
-/* =========================================================
-   COPY BUTTON
-========================================================= */
-
-.copyButton {
-    width: 100%;
+    width: 25px;
+    height: 25px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    gap: 8px;
+    border: 2px solid #353847;
+    border-radius: 50%;
 
-    padding: 9px 10px;
+    background: #151827;
 
-    border: 1px solid rgba(184, 120, 255, 0.18);
-    border-radius: 8px;
+    color: #73798a;
+
+    font-size: 8px;
+    font-weight: 750;
+
+    box-sizing: border-box;
+
+    transition:
+        transform 220ms ease,
+        border-color 220ms ease,
+        background 220ms ease,
+        color 220ms ease;
+}
+
+.milestone.completed {
+    border-color: #a875ef;
 
     background:
-        rgba(255, 255, 255, 0.035);
+        linear-gradient(
+            145deg,
+            #7650d2,
+            #a875ef
+        );
 
-    color: #c6bdd5;
+    color: #ffffff;
 
-    font-size: 11px;
-    font-weight: 600;
+    box-shadow:
+        0 0 14px rgba(168, 117, 239, 0.3);
+}
+
+.milestone.completed:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================================================
+   JOURNEY FOOTER
+========================================================= */
+
+.journeyFooter {
+    margin-top: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    color: #7f8596;
+
+    font-size: 10px;
+}
+
+.copyButton {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 9px;
+
+    border: 1px solid rgba(184, 120, 255, 0.16);
+    border-radius: 7px;
+
+    background: rgba(118, 80, 210, 0.045);
+
+    color: #aaa2b9;
+
+    font-size: 9px;
+    font-weight: 650;
 
     cursor: pointer;
 
     transition:
-        background 200ms ease,
-        border-color 200ms ease,
-        color 200ms ease,
-        transform 200ms ease;
+        color 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease;
 }
-
 
 .copyButton:hover {
-    background:
-        rgba(118, 80, 210, 0.11);
-
-    border-color:
-        rgba(184, 120, 255, 0.34);
-
     color: #ffffff;
 
-    transform: translateY(-1px);
-}
+    border-color: rgba(184, 120, 255, 0.35);
 
-
-.copyButton svg {
-    flex-shrink: 0;
+    background: rgba(118, 80, 210, 0.1);
 }
 
 
 /* =========================================================
-   REWARD CARD
+   MAIN CTA
 ========================================================= */
 
-.rewardSection {
-    padding: 18px;
+.referButton {
+    margin-top: 18px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 14px 11px 11px;
+
+    border: 1px solid rgba(214, 187, 255, 0.24);
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7149cb,
+            #9861e9
+        );
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(118, 80, 210, 0.25);
+
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        border-color 220ms ease;
+}
+
+.referButton:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(240, 225, 255, 0.5);
+
+    box-shadow:
+        0 14px 30px rgba(118, 80, 210, 0.38);
+}
+
+.referButton:active {
+    transform: translateY(0);
+}
+
+.buttonIcon {
+    width: 27px;
+    height: 27px;
 
     display: flex;
     align-items: center;
+    justify-content: center;
 
-    overflow: hidden;
+    border-radius: 7px;
 
-    /*
-        Slightly stronger reward-card background
-        so the 5,000 VEs section feels important.
-    */
-    background:
-        radial-gradient(
-            circle at 80% 78%,
-            rgba(255, 211, 77, 0.075),
-            transparent 34%
-        ),
-        radial-gradient(
-            circle at 100% 0%,
-            rgba(118, 80, 210, 0.12),
-            transparent 42%
-        ),
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.06),
-            rgba(255, 255, 255, 0.02)
-        );
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.buttonArrow {
+    margin-left: 2px;
+
+    transition:
+        transform 200ms ease;
+}
+
+.referButton:hover .buttonArrow {
+    transform: translateX(3px);
 }
 
 
-/* Subtle gold light behind reward */
+/* =========================================================
+   RIGHT VISUAL AREA
+========================================================= */
 
-.rewardSection::before {
-    content: "";
+.visualArea {
+    position: relative;
 
+    min-width: 0;
+    min-height: 420px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   VISUAL GLOW
+========================================================= */
+
+.visualGlow {
     position: absolute;
 
-    width: 110px;
-    height: 110px;
-
-    right: 10px;
-    bottom: -25px;
+    width: 340px;
+    height: 340px;
 
     border-radius: 50%;
 
     background:
-        rgba(255, 211, 77, 0.075);
+        radial-gradient(
+            circle,
+            rgba(151, 96, 235, 0.22),
+            rgba(151, 96, 235, 0.05) 48%,
+            transparent 70%
+        );
 
-    filter: blur(32px);
+    filter: blur(8px);
 
-    pointer-events: none;
+    animation: visualPulse 5s ease-in-out infinite;
+}
+
+@keyframes visualPulse {
+    0%,
+    100% {
+        transform: scale(0.96);
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: scale(1.04);
+        opacity: 1;
+    }
 }
 
 
 /* =========================================================
-   REWARD TEXT
+   ILLUSTRATION
 ========================================================= */
 
-.rewardText {
-    min-width: 0;
-
-    display: flex;
-    flex-direction: column;
-
+.illustrationWrapper {
     position: relative;
     z-index: 3;
 
-    /*
-        Gives the text enough vertical breathing room
-        from the coins.
-    */
-    padding-bottom: 42px;
+    width: min(80%, 360px);
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: illustrationFloat 5s ease-in-out infinite;
 }
 
+@keyframes illustrationFloat {
+    0%,
+    100% {
+        transform: translateY(2px);
+    }
 
-.rewardLabel {
-    font-size: 12px;
-    line-height: 1.4;
-
-    font-weight: 500;
-
-    color: #9ca2b3;
-
-    white-space: nowrap;
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
-
-/* =========================================================
-   STRONGER REWARD AMOUNT
-========================================================= */
-
-.rewardAmount {
-    margin-top: 6px;
-
-    font-size: 28px;
-    line-height: 1.05;
-
-    font-weight: 800;
-
-    letter-spacing: -0.8px;
-
-    color: #ffd34d;
-
-    white-space: nowrap;
-
-    /*
-        Makes 5,000 VEs the main visual focus.
-    */
-    text-shadow:
-        0 0 14px rgba(255, 211, 77, 0.14),
-        0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-.rewardDescription {
-    margin-top: 7px;
-
-    font-size: 11px;
-    line-height: 1.45;
-
-    color: #9298a9;
-}
-
-
-/* =========================================================
-   COINS
-========================================================= */
-
-.coins {
+.illustrationRing {
     position: absolute;
 
-    right: 2px;
-    bottom: 3px;
+    width: 72%;
+    height: 72%;
 
-    width: 100px;
-    height: 90px;
+    border: 1px solid rgba(185, 147, 255, 0.16);
 
-    pointer-events: none;
+    border-radius: 50%;
 
-    transition:
-        transform 350ms ease;
+    box-shadow:
+        0 0 35px rgba(151, 96, 235, 0.1),
+        inset 0 0 35px rgba(151, 96, 235, 0.05);
+
+    animation: ringPulse 5s ease-in-out infinite;
 }
 
+@keyframes ringPulse {
+    0%,
+    100% {
+        transform: scale(0.98);
+        opacity: 0.65;
+    }
 
-.rewardSection:hover .coins {
-    transform: translateY(-3px);
+    50% {
+        transform: scale(1.04);
+        opacity: 1;
+    }
 }
 
+.referralImage {
+    position: relative;
+    z-index: 2;
 
-/* Coin styling */
-
-.coinBack,
-.coinMiddle,
-.coinFront {
-    position: absolute;
-
-    width: 64px;
-    height: 64px;
+    width: 100%;
+    height: 100%;
 
     object-fit: contain;
 
     filter:
-        drop-shadow(0 7px 11px rgba(0, 0, 0, 0.32));
-}
-
-
-/* Back coin */
-
-.coinBack {
-    top: 0;
-    right: 0;
-
-    opacity: 0.72;
-
-    transform:
-        rotate(13deg)
-        scale(0.82);
-
-    z-index: 1;
-}
-
-
-/* Middle coin */
-
-.coinMiddle {
-    right: 20px;
-    bottom: 10px;
-
-    opacity: 0.9;
-
-    transform:
-        rotate(-10deg)
-        scale(0.9);
-
-    z-index: 2;
-}
-
-
-/* Front coin */
-
-.coinFront {
-    right: 28px;
-    bottom: -1px;
-
-    transform:
-        rotate(-7deg)
-        scale(1.02);
-
-    z-index: 3;
+        drop-shadow(0 25px 25px rgba(0, 0, 0, 0.4))
+        drop-shadow(0 0 20px rgba(151, 96, 235, 0.15));
 }
 
 
 /* =========================================================
-   RESPONSIVE — 1150px
+   FLOATING COINS
 ========================================================= */
 
-@media (max-width: 1150px) {
+.floatingCoin {
+    position: absolute;
+
+    z-index: 4;
+
+    width: 54px;
+    height: 54px;
+
+    animation:
+        coinFloat 4.5s ease-in-out infinite;
+}
+
+.floatingCoin img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 9px 13px rgba(0, 0, 0, 0.4))
+        drop-shadow(0 0 10px rgba(255, 210, 77, 0.14));
+}
+
+.coinOne {
+    top: 18%;
+    right: 14%;
+
+    animation-delay: -1s;
+}
+
+.coinTwo {
+    top: 53%;
+    left: 9%;
+
+    width: 50px;
+    height: 50px;
+
+    animation-delay: -2.5s;
+}
+
+.coinThree {
+    right: 15%;
+    bottom: 13%;
+
+    width: 50px;
+    height: 50px;
+
+    animation-delay: -3.4s;
+}
+
+@keyframes coinFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+
+/* =========================================================
+   REWARD BADGE
+========================================================= */
+
+.rewardBadge {
+    position: absolute;
+
+    top: 13%;
+    left: 0%;
+
+    z-index: 5;
+
+    min-width: 110px;
+
+    padding: 11px 13px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid rgba(255, 211, 77, 0.22);
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 211, 77, 0.11),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.2);
+
+    backdrop-filter: blur(12px);
+}
+
+.rewardBadgeLabel {
+    color: #a7a9b4;
+
+    font-size: 12px;
+    font-weight: 750;
+
+    letter-spacing: 0.12em;
+}
+
+.rewardBadge strong {
+    margin-top: 4px;
+
+    color: #ffd34d;
+
+    font-size: 20px;
+    line-height: 1;
+
+    font-weight: 850;
+}
+
+.rewardUnit {
+    margin-top: 3px;
+
+    color: #b5b0a0;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   REWARD INFO
+========================================================= */
+
+.rewardInfo {
+    position: absolute;
+
+    right: 6%;
+    bottom: 13%;
+
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: right;
+}
+
+.rewardInfo > span {
+    color: #777d8e;
+    margin-right : 105px;
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+.rewardInfo strong {
+    margin-top: 5px;
+    margin-right : 120px;
+    color: #938e9f;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.rewardInfo b {
+    color: #ffd34d;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
     .banner {
         grid-template-columns:
-            minmax(0, 44%)
-            minmax(0, 56%);
-    }
-
-    .referralIntro {
-        grid-template-columns:
-            minmax(0, 38%)
-            minmax(0, 62%);
-
-        padding-left: 16px;
-        padding-right: 26px;
-    }
-
-    .referralImage {
-        max-width: 145px;
-    }
-
-    .textContent {
-        padding-left: 4px;
-        padding-right: 8px;
-    }
-
-    .textContent h2 {
-        font-size: 19px;
-
-        margin-right: 18px;
-    }
-
-    .textContent p {
-        font-size: 12px;
-
-        margin-right: 12px;
-    }
-
-    .rightContent {
-        grid-template-columns:
             minmax(0, 1fr)
-            minmax(0, 0.9fr);
+            minmax(310px, 0.8fr);
 
-        gap: 10px;
-
-        padding-right: 9px;
+        min-height: 390px;
     }
 
-    .progressSection,
-    .rewardSection {
-        padding: 15px;
+    .mainContent {
+        padding: 34px 15px 34px 30px;
     }
 
-    .cardHeader span {
-        font-size: 12px;
+    .visualArea {
+        min-height: 390px;
     }
 
-    .progressMessage {
-        font-size: 10.5px;
+    .title {
+        font-size: clamp(28px, 3vw, 38px);
     }
 
-    .rewardAmount {
-        font-size: 25px;
+    .illustrationWrapper {
+        width: min(90%, 320px);
     }
 
-    .coins {
-        transform: scale(0.9);
-        transform-origin: bottom right;
+    .rewardBadge {
+        left: 2%;
     }
 
-    .rewardSection:hover .coins {
-        transform:
-            scale(0.9)
-            translateY(-3px);
+    .rewardInfo {
+        right: 3%;
     }
 }
 
 
 /* =========================================================
-   RESPONSIVE — 900px
+   TABLET / STACK
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 850px) {
     .banner {
         grid-template-columns: 1fr;
 
         min-height: auto;
     }
 
-    .referralIntro {
-        grid-template-columns:
-            minmax(0, 35%)
-            minmax(0, 65%);
-
-        padding: 20px 26px 20px 20px;
+    .mainContent {
+        padding: 32px 30px 20px;
     }
 
-    .rightContent {
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(0, 1fr);
-
-        padding: 0 20px 20px;
+    .visualArea {
+        min-height: 340px;
     }
 
-    .textContent h2 {
-        font-size: 20px;
+    .illustrationWrapper {
+        width: 280px;
     }
 
-    .textContent p {
-        font-size: 12px;
+    .rewardBadge {
+        top: 16%;
+        left: 16%;
     }
 
-    .referralImage {
-        max-width: 150px;
+    .rewardInfo {
+        right: 15%;
+        bottom: 12%;
     }
 
-    .rewardAmount {
-        font-size: 27px;
+    .coinOne {
+        right: 18%;
+    }
+
+    .coinTwo {
+        left: 15%;
+    }
+
+    .coinThree {
+        right: 24%;
     }
 }
 
 
 /* =========================================================
-   RESPONSIVE — 650px
+   MOBILE
 ========================================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
     .banner {
         width: calc(100% - 24px);
 
-        margin: 12px;
+        margin: 14px 12px;
 
-        border-radius: 16px;
+        border-radius: 20px;
     }
 
-    .referralIntro {
-        grid-template-columns: 1fr;
+    .mainContent {
+        padding: 27px 20px 16px;
+    }
 
-        text-align: center;
+    .eyebrow {
+        margin-bottom: 10px;
+    }
 
+    .title {
+        font-size: 28px;
+
+        letter-spacing: -1px;
+    }
+
+    .description {
+        margin: 14px 0 20px;
+
+        font-size: 12px;
+    }
+
+    .journey {
+        padding: 15px;
+    }
+
+    .journeyLabel {
+        font-size: 8px;
+    }
+
+    .journeyHeader > div {
         gap: 7px;
-
-        padding: 20px 18px;
     }
 
-    .imageWrapper {
-        height: 115px;
+    .journeyFooter {
+        font-size: 9px;
     }
 
-    .referralImage {
-        max-width: 125px;
-        max-height: 110px;
+    .visualArea {
+        min-height: 310px;
     }
 
-    .textContent {
-        align-items: center;
-
-        padding: 0;
+    .illustrationWrapper {
+        width: 245px;
     }
 
-    .textContent h2 {
-        font-size: 19px;
-
-        margin-right: 0;
-
-        white-space: normal;
+    .visualGlow {
+        width: 280px;
+        height: 280px;
     }
 
-    .textContent p {
-        max-width: 430px;
+    .rewardBadge {
+        top: 14%;
+        left: 7%;
 
-        margin-right: 0;
+        min-width: 90px;
+
+        padding: 9px 10px;
     }
 
-    .rightContent {
-        grid-template-columns: 1fr;
-
-        padding: 0 18px 18px;
+    .rewardBadge strong {
+        font-size: 17px;
     }
 
-    .progressSection,
-    .rewardSection {
-        min-height: 150px;
+    .rewardInfo {
+        right: 7%;
+        bottom: 10%;
     }
 
-    .rewardSection {
-        min-height: 165px;
+    .rewardInfo strong {
+        font-size: 10px;
     }
 
-    .rewardAmount {
-        font-size: 27px;
-    }
-}
+    .coinOne {
+        right: 8%;
+        top: 17%;
 
-
-/* =========================================================
-   RESPONSIVE — 430px
-========================================================= */
-
-@media (max-width: 430px) {
-    .banner {
-        width: calc(100% - 16px);
-
-        margin: 8px;
+        width: 44px;
+        height: 44px;
     }
 
-    .textContent h2 {
-        font-size: 18px;
+    .coinTwo {
+        left: 8%;
+        top: 54%;
+
+        width: 32px;
+        height: 32px;
     }
 
-    .textContent p {
-        font-size: 11.5px;
+    .coinThree {
+        right: 16%;
+        bottom: 15%;
+
+        width: 27px;
+        height: 27px;
     }
 
     .referButton {
-        font-size: 11px;
-    }
-
-    .rightContent {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-
-    .progressSection,
-    .rewardSection {
-        padding: 16px;
-    }
-
-    .rewardAmount {
-        font-size: 25px;
-    }
-
-    .rewardLabel {
-        font-size: 11px;
-    }
-
-    .rewardDescription {
-        font-size: 10.5px;
-    }
-
-    .coins {
-        right: 0;
-        bottom: 2px;
-
-        transform: scale(0.85);
-
-        transform-origin: bottom right;
-    }
-
-    .rewardSection:hover .coins {
-        transform:
-            scale(0.85)
-            translateY(-3px);
+        width: 100%;
+        justify-content: center;
     }
 }
 
 
 /* =========================================================
-   ACCESSIBILITY
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+    .mainContent {
+        padding: 23px 16px 14px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 11px;
+    }
+
+    .journey {
+        padding: 13px;
+    }
+
+    .journeyLabel {
+        display: block;
+        max-width: 110px;
+
+        line-height: 1.3;
+    }
+
+    .visualArea {
+        min-height: 280px;
+    }
+
+    .illustrationWrapper {
+        width: 215px;
+    }
+
+    .rewardBadge {
+        left: 5%;
+    }
+
+    .rewardInfo {
+        right: 5%;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-    .banner,
-    .referralImage,
+    .visualGlow,
+    .illustrationWrapper,
+    .illustrationRing,
+    .floatingCoin {
+        animation: none;
+    }
+
     .referButton,
-    .referButton svg,
-    .progressSection,
-    .rewardSection,
-    .coins,
     .copyButton,
-    .progress {
+    .milestone {
         transition: none;
     }
 }

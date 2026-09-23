@@ -1,4 +1,9 @@
-import { ArrowRight, Link2 } from "lucide-react";
+import {
+    ArrowRight,
+    Check,
+    Link2,
+    Users,
+} from "lucide-react";
 
 import styles from "./ReferralBanner.module.css";
 
@@ -21,11 +26,175 @@ const ReferralBanner = ({
 
     return (
         <section className={styles.banner}>
-            {/* =========================
-                LEFT — INTRO
-            ========================== */}
-            <div className={styles.referralIntro}>
-                <div className={styles.imageWrapper}>
+            {/* Decorative background */}
+            <div
+                className={styles.backgroundGlow}
+                aria-hidden="true"
+            />
+
+            <div
+                className={styles.backgroundGrid}
+                aria-hidden="true"
+            />
+
+            {/* =====================================================
+                LEFT CONTENT
+            ====================================================== */}
+
+            <div className={styles.mainContent}>
+                <div className={styles.eyebrow}>
+                    <span className={styles.eyebrowDot} />
+                    REFER &amp; EARN
+                </div>
+
+                <h2 className={styles.title}>
+                    Invite friends.
+                    <br />
+                    <span>Earn rewards together.</span>
+                </h2>
+
+                <p className={styles.description}>
+                    Share your referral link with friends and
+                    unlock exciting VE rewards when they join
+                    VELOOP.
+                </p>
+
+                {/* Referral Journey */}
+                <div className={styles.journey}>
+                    <div className={styles.journeyHeader}>
+                        <div>
+                            <span className={styles.journeyLabel}>
+                                YOUR REFERRAL JOURNEY
+                            </span>
+
+                            <strong className={styles.journeyCount}>
+                                {referrals}
+                                <span> / {target}</span>
+                            </strong>
+                        </div>
+
+                        <span className={styles.percentage}>
+                            {percentage}%
+                        </span>
+                    </div>
+
+                    <div
+                        className={styles.milestones}
+                        aria-label={`Referral progress: ${referrals} of ${target}`}
+                    >
+                        <div className={styles.milestoneLine}>
+                            <div
+                                className={styles.milestoneProgress}
+                                style={{
+                                    width: `${percentage}%`,
+                                }}
+                            />
+                        </div>
+
+                        {Array.from({ length: target }).map(
+                            (_, index) => {
+                                const completed =
+                                    index < referrals;
+
+                                return (
+                                    <div
+                                        key={index}
+                                        className={`${styles.milestone} ${
+                                            completed
+                                                ? styles.completed
+                                                : ""
+                                        }`}
+                                    >
+                                        {completed ? (
+                                            <Check
+                                                size={11}
+                                                strokeWidth={3}
+                                            />
+                                        ) : (
+                                            <span>
+                                                {index + 1}
+                                            </span>
+                                        )}
+                                    </div>
+                                );
+                            }
+                        )}
+                    </div>
+
+                    <div className={styles.journeyFooter}>
+                        <span>
+                            {remaining === 0
+                                ? "Reward unlocked!"
+                                : `${remaining} ${
+                                      remaining === 1
+                                          ? "referral"
+                                          : "referrals"
+                                  } remaining`}
+                        </span>
+
+                        <button
+                            type="button"
+                            className={styles.copyButton}
+                            onClick={onCopyLink}
+                        >
+                            <Link2
+                                size={13}
+                                aria-hidden="true"
+                            />
+                            Copy link
+                        </button>
+                    </div>
+                </div>
+
+                {/* CTA */}
+                <button
+                    type="button"
+                    className={styles.referButton}
+                    onClick={onRefer}
+                >
+                    <span className={styles.buttonIcon}>
+                        <Users size={16} />
+                    </span>
+
+                    <span>Invite Friends</span>
+
+                    <ArrowRight
+                        size={16}
+                        className={styles.buttonArrow}
+                        aria-hidden="true"
+                    />
+                </button>
+            </div>
+
+            {/* =====================================================
+                RIGHT VISUAL
+            ====================================================== */}
+
+            <div className={styles.visualArea}>
+                <div className={styles.visualGlow} />
+
+                {/* Floating reward badge */}
+                <div className={styles.rewardBadge}>
+                    <span className={styles.rewardBadgeLabel}>
+                        REWARD
+                    </span>
+
+                    <strong>
+                        +{reward.toLocaleString()}
+                    </strong>
+
+                    <span className={styles.rewardUnit}>
+                        VE
+                    </span>
+                </div>
+
+                {/* Referral illustration */}
+                <div className={styles.illustrationWrapper}>
+                    <div
+                        className={styles.illustrationRing}
+                        aria-hidden="true"
+                    />
+
                     <img
                         src={referralImage}
                         alt="Invite friends and earn rewards"
@@ -33,116 +202,38 @@ const ReferralBanner = ({
                     />
                 </div>
 
-                <div className={styles.textContent}>
-                    <h2>Invite Friends. Earn Rewards.</h2>
-
-                    <p>
-                        Share your referral link and earn amazing rewards
-                        when your friends join VELOOP Rewards.
-                    </p>
-
-                    <button
-                        type="button"
-                        className={styles.referButton}
-                        onClick={onRefer}
-                    >
-                        <span>Refer &amp; Earn</span>
-                        <ArrowRight size={16} aria-hidden="true" />
-                    </button>
-                </div>
-            </div>
-
-            {/* =========================
-                RIGHT — TWO CARDS
-            ========================== */}
-            <div className={styles.rightContent}>
-                {/* =========================
-                    PROGRESS CARD
-                ========================== */}
-                <div className={styles.progressSection}>
-                    <div className={styles.cardHeader}>
-                        <span>Referral Progress</span>
-
-                        <strong>
-                            {referrals} / {target}
-                        </strong>
-                    </div>
-
-                    <div
-                        className={styles.progressTrack}
-                        role="progressbar"
-                        aria-valuenow={percentage}
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                        aria-label="Referral progress"
-                    >
-                        <div
-                            className={styles.progress}
-                            style={{
-                                width: `${percentage}%`,
-                            }}
-                        />
-                    </div>
-
-                    <div className={styles.progressPercentage}>
-                        {percentage}%
-                    </div>
-
-                    <p className={styles.progressMessage}>
-                        {remaining === 0
-                            ? "You have reached your next reward!"
-                            : `You are ${remaining} ${
-                                  remaining === 1 ? "referral" : "referrals"
-                              } away from your next reward!`}
-                    </p>
-
-                    <button
-                        type="button"
-                        className={styles.copyButton}
-                        onClick={onCopyLink}
-                    >
-                        <Link2 size={15} aria-hidden="true" />
-                        <span>Copy Referral Link</span>
-                    </button>
+                {/* Floating coins */}
+                <div
+                    className={`${styles.floatingCoin} ${styles.coinOne}`}
+                    aria-hidden="true"
+                >
+                    <img src={veCoin} alt="" />
                 </div>
 
-                {/* =========================
-                    REWARD CARD
-                ========================== */}
-                <div className={styles.rewardSection}>
-                    <div className={styles.rewardText}>
-                        <span className={styles.rewardLabel}>
-                            You can earn up to
-                        </span>
+                <div
+                    className={`${styles.floatingCoin} ${styles.coinTwo}`}
+                    aria-hidden="true"
+                >
+                    <img src={veCoin} alt="" />
+                </div>
 
-                        <strong className={styles.rewardAmount}>
+                <div
+                    className={`${styles.floatingCoin} ${styles.coinThree}`}
+                    aria-hidden="true"
+                >
+                    <img src={veCoin} alt="" />
+                </div>
+
+                {/* Bottom reward text */}
+                <div className={styles.rewardInfo}>
+                    <span>PER SUCCESSFUL REFERRAL</span>
+
+                    <strong>
+                        Earn up to{" "}
+                        <b>
                             {reward.toLocaleString()} VEs
-                        </strong>
-
-                        <span className={styles.rewardDescription}>
-                            per successful referral
-                        </span>
-                    </div>
-
-                    <div className={styles.coins} aria-hidden="true">
-                        <img
-                            src={veCoin}
-                            alt=""
-                            className={styles.coinBack}
-                        />
-
-                        <img
-                            src={veCoin}
-                            alt=""
-                            className={styles.coinMiddle}
-                        />
-
-                        <img
-                            src={veCoin}
-                            alt=""
-                            className={styles.coinFront}
-                        />
-                    </div>
+                        </b>
+                    </strong>
                 </div>
             </div>
         </section>
