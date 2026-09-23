@@ -1,7 +1,6 @@
-import { Sparkles } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 
 import FeatureCard from "./FeatureCard";
-// import UpcomingFeatures from "./UpcomingFeatures";
 
 import { featureData } from "../../data/featureData";
 
@@ -16,24 +15,49 @@ const EarnMore = () => {
         <section className={styles.section}>
             {/* SECTION HEADER */}
             <div className={styles.header}>
-                <div className={styles.titleWrapper}>
-                    <Sparkles size={15} className={styles.titleIcon} />
+                <div className={styles.headingGroup}>
+                    <div className={styles.sectionIcon}>
+                        <Sparkles size={17} strokeWidth={2} />
+                    </div>
 
-                    <h2>Earn More</h2>
+                    <div>
+                        <div className={styles.titleRow}>
+                            <h2>Earn More</h2>
+
+                            <span className={styles.liveBadge}>
+                                <span />
+                                LIVE
+                            </span>
+                        </div>
+
+                        <p>
+                            Turn your everyday activity into VE rewards.
+                        </p>
+                    </div>
                 </div>
+
+                <button
+                    type="button"
+                    className={styles.viewButton}
+                >
+                    <span>Explore all</span>
+                    <ArrowUpRight
+                        size={15}
+                        strokeWidth={1.8}
+                    />
+                </button>
             </div>
 
             {/* FEATURE GRID */}
             <div className={styles.grid}>
-                {featureData.map((feature) => (
+                {featureData.map((feature, index) => (
                     <FeatureCard
                         key={feature.id}
                         {...feature}
+                        featured={index === 0}
                         onClick={() => handleFeatureClick(feature)}
                     />
                 ))}
-
-                {/* <UpcomingFeatures /> */}
             </div>
         </section>
     );

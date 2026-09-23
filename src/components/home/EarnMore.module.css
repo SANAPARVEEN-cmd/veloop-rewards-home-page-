@@ -1,154 +1,388 @@
+/* =========================================
+   SECTION
+========================================= */
+
 .section {
+    position: relative;
     width: 100%;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 24px;
+    padding: 0 4px;
+    box-sizing: border-box;
 }
 
-/* =========================
-   SECTION HEADER
-========================= */
+
+/* =========================================
+   HEADER
+========================================= */
 
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
-    margin-bottom: 14px;
+    gap: 20px;
 
-    /* Small left alignment */
-    padding-left: 4px;
+    margin-bottom: 18px;
+    padding: 0 12px;
 }
 
-.titleWrapper {
+.headingGroup {
+    min-width: 0;
+
     display: flex;
     align-items: center;
-    gap: 8px;
+
+    gap: 12px;
 }
 
-.titleIcon {
-    width: 17px;
-    height: 17px;
+.sectionIcon {
+    width: 38px;
+    height: 38px;
 
-    color: #f4c542;
+    flex-shrink: 0;
 
-    filter: drop-shadow(
-        0 0 6px rgba(244, 197, 66, 0.3)
-    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    color: #f3c84b;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(243, 200, 75, 0.14),
+            rgba(243, 200, 75, 0.04)
+        );
+
+    border: 1px solid rgba(243, 200, 75, 0.16);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 0 18px rgba(243, 200, 75, 0.05);
 }
 
-.titleWrapper h2 {
+.titleRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.titleRow h2 {
     margin: 0;
 
-    color: #ddd9e8;
+    color: #f0edf6;
 
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 700;
+    line-height: 1.2;
 
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    letter-spacing: -0.01em;
 }
 
-/* =========================
-   CARD GRID
-========================= */
+.headingGroup p {
+    margin: 4px 0 0;
+
+    color: rgba(218, 215, 227, 0.48);
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+
+/* =========================================
+   LIVE BADGE
+========================================= */
+
+.liveBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 4px 7px;
+
+    border-radius: 6px;
+
+    color: #8de19b;
+
+    background: rgba(105, 217, 107, 0.07);
+
+    border: 1px solid rgba(105, 217, 107, 0.13);
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+}
+
+.liveBadge span {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #69d96b;
+
+    box-shadow: 0 0 7px rgba(105, 217, 107, 0.65);
+
+    animation: livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+    0%,
+    100% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   EXPLORE BUTTON
+========================================= */
+
+.viewButton {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 8px 11px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    color: rgba(225, 221, 234, 0.68);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.viewButton:hover {
+    color: #f0edf6;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border-color: rgba(168, 132, 255, 0.22);
+
+    transform: translateY(-1px);
+}
+
+.viewButton svg {
+    color: #a98cff;
+}
+
+
+/* =========================================
+   FEATURE GRID
+========================================= */
 
 .grid {
     display: grid;
 
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
-    /*
-       Left + right spacing
-    */
-    margin-left: 12px;
-    margin-right: 12px;
-
-    /*
-       Top and bottom breathing room
-    */
-    padding-top: 2px;
-    padding-bottom: 6px;
-
-    /*
-       Space between cards
-    */
     gap: 16px;
+
+    width: 100%;
+
+    padding: 0 12px;
+
+    box-sizing: border-box;
 }
 
-/* =========================
+
+/*
+    First card gets more visual importance.
+    It occupies two columns on large screens.
+*/
+
+.grid > article:first-child {
+    grid-column: span 2;
+}
+
+
+/* =========================================
    LARGE TABLET
-========================= */
+========================================= */
 
 @media (max-width: 1200px) {
     .grid {
-        grid-template-columns: repeat(
-            3,
-            minmax(0, 1fr)
-        );
-
-        margin-left: 15px;
-        margin-right: 15px;
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
 
         gap: 14px;
     }
+
+    .grid > article:first-child {
+        grid-column: span 2;
+    }
 }
 
-/* =========================
+
+/* =========================================
    TABLET
-========================= */
+========================================= */
 
 @media (max-width: 900px) {
-    .grid {
-        grid-template-columns: repeat(
-            2,
-            minmax(0, 1fr)
-        );
-
-        margin-left: 10px;
-        margin-right: 10px;
-
-        gap: 14px;
-    }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
     .section {
-        margin-top: 16px;
         margin-bottom: 20px;
     }
 
     .header {
-        margin-bottom: 12px;
-        padding-left: 2px;
+        padding: 0 10px;
     }
 
     .grid {
-        grid-template-columns: repeat(
-            2,
-            minmax(0, 1fr)
-        );
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
-        margin-left: 13px;
-        margin-right: 13px;
+        gap: 14px;
 
-        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .grid > article:first-child {
+        grid-column: span 2;
     }
 }
 
-/* =========================
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+    .section {
+        margin-top: 16px;
+        margin-bottom: 22px;
+        padding: 0;
+    }
+
+    .header {
+        align-items: flex-end;
+
+        margin-bottom: 14px;
+        padding: 0 14px;
+
+        gap: 10px;
+    }
+
+    .headingGroup {
+        gap: 9px;
+    }
+
+    .sectionIcon {
+        width: 34px;
+        height: 34px;
+
+        border-radius: 9px;
+    }
+
+    .sectionIcon svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .titleRow {
+        gap: 7px;
+    }
+
+    .titleRow h2 {
+        font-size: 18px;
+    }
+
+    .headingGroup p {
+        max-width: 230px;
+
+        font-size: 10px;
+    }
+
+    .liveBadge {
+        display: none;
+    }
+
+    .viewButton {
+        padding: 7px 9px;
+
+        font-size: 10px;
+    }
+
+    .viewButton span {
+        display: none;
+    }
+
+    .grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 11px;
+
+        padding: 0 13px;
+    }
+
+    .grid > article:first-child {
+        grid-column: span 2;
+    }
+}
+
+
+/* =========================================
    SMALL MOBILE
-========================= */
+========================================= */
 
 @media (max-width: 430px) {
+    .header {
+        padding: 0 12px;
+    }
+
+    .headingGroup p {
+        display: none;
+    }
+
     .grid {
         grid-template-columns: 1fr;
 
         gap: 12px;
 
-        margin-left: 12px;
-        margin-right: 12px;
+        padding: 0 12px;
+    }
+
+    .grid > article:first-child {
+        grid-column: span 1;
+    }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .liveBadge span {
+        animation: none;
+    }
+
+    .viewButton {
+        transition: none;
     }
 }
