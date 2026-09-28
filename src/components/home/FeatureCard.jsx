@@ -8,6 +8,7 @@ import styles from "./FeatureCard.module.css";
 const FeatureCard = ({
     title,
     description,
+    reward,
     buttonText,
     icon: Icon,
     accent = "purple",
@@ -22,8 +23,10 @@ const FeatureCard = ({
                 ${featured ? styles.featured : ""}
             `}
         >
+            {/* Background glow */}
             <div className={styles.cardGlow} />
 
+            {/* Top section */}
             <div className={styles.topRow}>
                 <div className={styles.iconWrapper}>
                     <Icon
@@ -40,13 +43,19 @@ const FeatureCard = ({
                 )}
             </div>
 
+            {/* Card content */}
             <div className={styles.content}>
                 <h3>{title}</h3>
 
                 <p>{description}</p>
             </div>
 
+            {/* Bottom section */}
             <div className={styles.bottomRow}>
+                <div className={styles.reward}>
+                    {reward}
+                </div>
+
                 <button
                     type="button"
                     className={styles.actionButton}

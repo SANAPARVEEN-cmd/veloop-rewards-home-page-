@@ -96,7 +96,7 @@
 
     color: #a98cff;
 
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
 
     letter-spacing: 0.13em;
@@ -107,7 +107,7 @@
 
     color: #eeeaf4;
 
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
 
     line-height: 1.25;
@@ -121,7 +121,7 @@
 
     color: rgba(218, 215, 227, 0.55);
 
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.6;
 }
 
@@ -147,15 +147,15 @@
 
     color: rgba(218, 215, 227, 0.55);
 
-    font-size: 11px;
+    font-size: 13px;
 
     white-space: nowrap;
     overflow-wrap: anywhere;
 }
 
 .email svg {
-    width: 16px;
-    height: 16px;
+    width: 17px;
+    height: 17px;
 
     color: #a98cff;
 }
@@ -181,7 +181,7 @@
 
     background: rgba(233, 189, 67, 0.08);
 
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 600;
 
     white-space: nowrap;

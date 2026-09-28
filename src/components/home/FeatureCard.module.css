@@ -334,6 +334,10 @@
     margin-top: 18px;
 }
 
+/*
+   FIX: titles no longer use nowrap + ellipsis,
+   so long titles wrap instead of being cut off.
+*/
 .content h3 {
     margin: 0 0 7px;
 
@@ -345,10 +349,8 @@
     line-height: 1.25;
     letter-spacing: -0.012em;
 
-    white-space: nowrap;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 .content p {
@@ -363,11 +365,20 @@
 
     line-height: 1.55;
     letter-spacing: 0.005em;
+
+    overflow-wrap: anywhere;
 }
 
 
 /* =========================================
    BOTTOM ROW
+
+   FIX: this row used to be a single non-wrapping
+   line, so on narrow cards the button + arrow ran
+   past the card edge and got clipped by
+   overflow: hidden. It now wraps: reward on one
+   line, action button on the next, whenever both
+   don't fit side by side.
 ========================================= */
 
 .bottomRow {
@@ -375,13 +386,44 @@
     z-index: 2;
 
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
 
-    gap: 12px;
+    column-gap: 12px;
+    row-gap: 10px;
 
     margin-top: auto;
     padding-top: 18px;
+
+    min-width: 0;
+}
+
+
+/* =========================================
+   REWARD
+========================================= */
+
+.reward {
+    flex-shrink: 0;
+
+    color: var(--card-accent);
+
+    font-size: 15px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: -0.01em;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 0 14px
+        color-mix(
+            in srgb,
+            var(--card-accent) 18%,
+            transparent
+        );
 }
 
 
@@ -394,6 +436,8 @@
     align-items: center;
 
     gap: 9px;
+
+    max-width: 100%;
 
     padding: 0;
 
@@ -418,6 +462,15 @@
     cursor: pointer;
 }
 
+.actionButton:hover {
+    color:
+        color-mix(
+            in srgb,
+            var(--card-accent) 100%,
+            white
+        );
+}
+
 .arrowCircle {
     width: 28px;
     height: 28px;
@@ -425,6 +478,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-shrink: 0;
 
     border-radius: 50%;
 
@@ -461,14 +516,25 @@
 
 /* =========================================
    ACCENT LINE
+
+   FIX: hidden by default. It only shows on the
+   featured card, where there is room for it. On
+   small cards it was forcing the row wider than
+   the card. It also starts at zero width so it
+   can never push other items onto a new line.
 ========================================= */
 
 .accentLine {
-    flex: 1;
+    display: none;
 
+    flex: 1 1 0;
+
+    min-width: 0;
     max-width: 90px;
 
     height: 1px;
+
+    margin-left: auto;
 
     background:
         linear-gradient(
@@ -482,6 +548,12 @@
         );
 
     opacity: 0.7;
+}
+
+.featured .accentLine {
+    display: block;
+
+    min-width: 15px;
 }
 
 
@@ -544,6 +616,14 @@
     .content p {
         font-size: 13px;
     }
+
+    .reward {
+        font-size: 14px;
+    }
+
+    .actionButton {
+        font-size: 13px;
+    }
 }
 
 
@@ -575,6 +655,10 @@
 
     .content p {
         font-size: 13px;
+    }
+
+    .reward {
+        font-size: 14px;
     }
 
     .actionButton {
@@ -618,7 +702,13 @@
     }
 
     .bottomRow {
+        column-gap: 10px;
+        row-gap: 8px;
         padding-top: 16px;
+    }
+
+    .reward {
+        font-size: 14px;
     }
 
     .actionButton {
@@ -628,6 +718,10 @@
     .arrowCircle {
         width: 26px;
         height: 26px;
+    }
+
+    .accentLine {
+        max-width: 45px;
     }
 }
 
