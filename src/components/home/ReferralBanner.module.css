@@ -6,19 +6,19 @@
     position: relative;
 
     width: calc(100% - 36px);
-    min-height: 420px;
+    min-height: 200px;
 
     margin: 26px 18px;
 
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
 
     overflow: hidden;
 
     box-sizing: border-box;
 
     border: 1px solid rgba(169, 132, 255, 0.2);
-    border-radius: 26px;
+    border-radius: 20px;
 
     background:
         radial-gradient(
@@ -113,7 +113,7 @@
 
     min-width: 0;
 
-    padding: 42px 20px 42px 42px;
+    padding: 12px 18px 12px 28px;
 
     display: flex;
     flex-direction: column;
@@ -131,11 +131,11 @@
     align-items: center;
     gap: 8px;
 
-    margin-bottom: 13px;
+    margin-bottom: 7px;
 
     color: #b993ff;
 
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 750;
 
     letter-spacing: 0.17em;
@@ -166,7 +166,7 @@
 
     color: #f7f5fb;
 
-    font-size: clamp(31px, 3.1vw, 46px);
+    font-size: clamp(24px, 2.2vw, 31px);
     line-height: 1.05;
 
     font-weight: 800;
@@ -188,6 +188,12 @@
     -webkit-text-fill-color: transparent;
 }
 
+@media (min-width: 851px) {
+    .title br {
+        display: none;
+    }
+}
+
 
 /* =========================================================
    DESCRIPTION
@@ -196,12 +202,12 @@
 .description {
     max-width: 485px;
 
-    margin: 17px 0 25px;
+    margin: 8px 0 10px;
 
     color: rgba(218, 215, 227, 0.6);
 
-    font-size: 14px;
-    line-height: 1.7;
+    font-size: 12px;
+    line-height: 1.45;
 }
 
 
@@ -212,12 +218,12 @@
 .journey {
     width: min(100%, 500px);
 
-    padding: 17px 18px 15px;
+    padding: 6px 10px 5px;
 
     box-sizing: border-box;
 
     border: 1px solid rgba(255, 255, 255, 0.075);
-    border-radius: 15px;
+    border-radius: 11px;
 
     background:
         linear-gradient(
@@ -242,7 +248,7 @@
 
     gap: 16px;
 
-    margin-bottom: 15px;
+    margin-bottom: 4px;
 }
 
 .journeyHeader > div {
@@ -254,7 +260,7 @@
 .journeyLabel {
     color: #878d9d;
 
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 700;
 
     letter-spacing: 0.12em;
@@ -289,7 +295,7 @@
 .milestones {
     position: relative;
 
-    height: 26px;
+    height: 20px;
 
     display: flex;
     align-items: center;
@@ -340,8 +346,8 @@
     position: relative;
     z-index: 2;
 
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 
     display: flex;
     align-items: center;
@@ -392,7 +398,7 @@
 ========================================================= */
 
 .journeyFooter {
-    margin-top: 13px;
+    margin-top: 5px;
 
     display: flex;
     align-items: center;
@@ -411,7 +417,7 @@
 
     gap: 6px;
 
-    padding: 6px 9px;
+    padding: 3px 7px;
 
     border: 1px solid rgba(184, 120, 255, 0.16);
     border-radius: 7px;
@@ -439,20 +445,26 @@
     background: rgba(118, 80, 210, 0.1);
 }
 
+.copyButton:focus-visible,
+.referButton:focus-visible {
+    outline: 2px solid #d8c5ff;
+    outline-offset: 3px;
+}
+
 
 /* =========================================================
    MAIN CTA
 ========================================================= */
 
 .referButton {
-    margin-top: 18px;
+    margin-top: 6px;
 
     display: inline-flex;
     align-items: center;
 
     gap: 10px;
 
-    padding: 11px 14px 11px 11px;
+    padding: 7px 11px 7px 8px;
 
     border: 1px solid rgba(214, 187, 255, 0.24);
     border-radius: 10px;
@@ -466,7 +478,7 @@
 
     color: #ffffff;
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 750;
 
     cursor: pointer;
@@ -494,8 +506,8 @@
 }
 
 .buttonIcon {
-    width: 27px;
-    height: 27px;
+    width: 23px;
+    height: 23px;
 
     display: flex;
     align-items: center;
@@ -526,7 +538,7 @@
     position: relative;
 
     min-width: 0;
-    min-height: 420px;
+    min-height: 200px;
 
     display: flex;
     align-items: center;
@@ -543,8 +555,8 @@
 .visualGlow {
     position: absolute;
 
-    width: 340px;
-    height: 340px;
+    width: 230px;
+    height: 230px;
 
     border-radius: 50%;
 
@@ -583,7 +595,7 @@
     position: relative;
     z-index: 3;
 
-    width: min(80%, 360px);
+    width: min(86%, 235px);
     aspect-ratio: 1 / 1;
 
     display: flex;
@@ -658,8 +670,8 @@
 
     z-index: 4;
 
-    width: 54px;
-    height: 54px;
+    width: 34px;
+    height: 34px;
 
     animation:
         coinFloat 4.5s ease-in-out infinite;
@@ -687,8 +699,8 @@
     top: 53%;
     left: 9%;
 
-    width: 50px;
-    height: 50px;
+    width: 31px;
+    height: 31px;
 
     animation-delay: -2.5s;
 }
@@ -697,8 +709,8 @@
     right: 15%;
     bottom: 13%;
 
-    width: 50px;
-    height: 50px;
+    width: 31px;
+    height: 31px;
 
     animation-delay: -3.4s;
 }
@@ -722,14 +734,14 @@
 .rewardBadge {
     position: absolute;
 
-    top: 13%;
-    left: 0%;
+    top: 8%;
+    left: 2%;
 
     z-index: 5;
 
     min-width: 110px;
 
-    padding: 11px 13px;
+    padding: 8px 10px;
 
     display: flex;
     flex-direction: column;
@@ -753,7 +765,7 @@
 .rewardBadgeLabel {
     color: #a7a9b4;
 
-    font-size: 12px;
+    font-size: 9px;
     font-weight: 750;
 
     letter-spacing: 0.12em;
@@ -764,7 +776,7 @@
 
     color: #ffd34d;
 
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1;
 
     font-weight: 850;
@@ -787,8 +799,8 @@
 .rewardInfo {
     position: absolute;
 
-    right: 6%;
-    bottom: 13%;
+    right: 4%;
+    bottom: 8%;
 
     z-index: 5;
 
@@ -800,8 +812,8 @@
 
 .rewardInfo > span {
     color: #777d8e;
-    margin-right : 105px;
-    font-size: 14px;
+    margin-right: 0;
+    font-size: 9px;
     font-weight: 700;
 
     letter-spacing: 0.12em;
@@ -809,10 +821,10 @@
 
 .rewardInfo strong {
     margin-top: 5px;
-    margin-right : 120px;
+    margin-right: 0;
     color: #938e9f;
 
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 700;
 }
 
@@ -829,17 +841,17 @@
     .banner {
         grid-template-columns:
             minmax(0, 1fr)
-            minmax(310px, 0.8fr);
+            minmax(250px, 0.75fr);
 
-        min-height: 390px;
+        min-height: 200px;
     }
 
     .mainContent {
-        padding: 34px 15px 34px 30px;
+        padding: 12px 14px 12px 22px;
     }
 
     .visualArea {
-        min-height: 390px;
+        min-height: 200px;
     }
 
     .title {
@@ -847,7 +859,7 @@
     }
 
     .illustrationWrapper {
-        width: min(90%, 320px);
+        width: min(90%, 220px);
     }
 
     .rewardBadge {
@@ -872,15 +884,15 @@
     }
 
     .mainContent {
-        padding: 32px 30px 20px;
+        padding: 22px 24px 16px;
     }
 
     .visualArea {
-        min-height: 340px;
+        min-height: 250px;
     }
 
     .illustrationWrapper {
-        width: 280px;
+        width: 220px;
     }
 
     .rewardBadge {
@@ -921,7 +933,7 @@
     }
 
     .mainContent {
-        padding: 27px 20px 16px;
+        padding: 20px 16px 14px;
     }
 
     .eyebrow {
@@ -935,7 +947,7 @@
     }
 
     .description {
-        margin: 14px 0 20px;
+        margin: 10px 0 14px;
 
         font-size: 12px;
     }
@@ -957,16 +969,16 @@
     }
 
     .visualArea {
-        min-height: 310px;
+        min-height: 200px;
     }
 
     .illustrationWrapper {
-        width: 245px;
+        width: 180px;
     }
 
     .visualGlow {
-        width: 280px;
-        height: 280px;
+        width: 230px;
+        height: 230px;
     }
 
     .rewardBadge {
@@ -1028,11 +1040,11 @@
 
 @media (max-width: 400px) {
     .mainContent {
-        padding: 23px 16px 14px;
+        padding: 18px 13px 12px;
     }
 
     .title {
-        font-size: 24px;
+        font-size: 23px;
     }
 
     .description {
@@ -1051,11 +1063,11 @@
     }
 
     .visualArea {
-        min-height: 280px;
+        min-height: 190px;
     }
 
     .illustrationWrapper {
-        width: 215px;
+        width: 165px;
     }
 
     .rewardBadge {

@@ -7,8 +7,8 @@
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1fr)
-        260px;
+        minmax(0, 1.3fr)
+        minmax(300px, 0.7fr);
 
     gap: 16px;
 
@@ -21,20 +21,15 @@
     box-sizing: border-box;
 }
 
-/* Prevent Earn More from overflowing */
-.lowerDashboard > section:first-child {
+.lowerDashboard > section {
     min-width: 0;
 }
-
-/* =================================
-   LARGE TABLET
-================================= */
 
 @media (max-width: 1100px) {
     .lowerDashboard {
         grid-template-columns:
             minmax(0, 1fr)
-            240px;
+            minmax(280px, 0.72fr);
 
         gap: 14px;
 
@@ -42,10 +37,6 @@
         padding-right: 14px;
     }
 }
-
-/* =================================
-   TABLET
-================================= */
 
 @media (max-width: 900px) {
     .lowerDashboard {
@@ -57,10 +48,6 @@
         padding-right: 14px;
     }
 }
-
-/* =================================
-   MOBILE
-================================= */
 
 @media (max-width: 600px) {
     .lowerDashboard {
