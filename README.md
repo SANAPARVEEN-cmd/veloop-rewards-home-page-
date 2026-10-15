@@ -49,7 +49,7 @@ The interface is designed around a **dark premium visual system** with subtle gl
 
 ---
 ### Live URL
-<a href = "https://veloop-rewards-tawny.vercel.app/">VIEW FULL PROJECT DEMO </a>
+<a href = "https://veloop-dashboard-gules.vercel.app/">VIEW FULL PROJECT DEMO </a>
 # 🚀 Features
 
 ## Dashboard
