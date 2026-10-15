@@ -17,18 +17,22 @@ const WalletCard = ({
                 <div className={styles.textContent}>
 
                     <div className={styles.heading}>
-                        <Wallet size={27} strokeWidth={1.7} />
+                        <span className={styles.headingIcon}>
+                            <Wallet size={17} strokeWidth={1.8} />
+                        </span>
 
                         <h2>My Wallet</h2>
                     </div>
 
-                    <p>
-                        Manage your rewards,
-                        <br />
-                        view your balance
-                    </p>
+                    <div className={styles.balanceBlock}>
+                        <span className={styles.balanceLabel}>Available balance</span>
+                        <p className={styles.balance}>
+                            ${balance.toFixed(2)}
+                        </p>
+                    </div>
 
                     <button
+                        type="button"
                         className={styles.button}
                         onClick={onViewWallet}
                     >

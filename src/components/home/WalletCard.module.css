@@ -1,7 +1,7 @@
 .card {
     position: relative;
     min-height: 205px;
-    padding: 22px 24px;
+    padding: 20px 22px;
     box-sizing: border-box;
 
     overflow: hidden;
@@ -42,13 +42,12 @@
     z-index: 1;
 
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
 
     height: 100%;
-    min-height: 160px;
 
-    gap: 10px;
+    gap: 16px;
 }
 
 .textContent {
@@ -58,35 +57,71 @@
 
     min-width: 0;
     flex: 1;
+
+    justify-content: space-between;
+    gap: 12px;
 }
 
 .heading {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 9px;
 
     color: #f3f3f5;
 }
 
-.heading svg {
-    color: #d9dce4;
+.headingIcon {
+    width: 30px;
+    height: 30px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(245, 195, 41, 0.28);
+    border-radius: 9px;
+
+    color: #f5c329;
+    background: rgba(245, 195, 41, 0.08);
+}
+
+.headingIcon svg {
+    color: currentColor;
 }
 
 .heading h2 {
     margin: 0;
 
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 600;
     white-space: nowrap;
 }
 
-.textContent p {
-    margin: 12px 0 18px;
+.balanceBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
 
-    color: #a4aab7;
+.balanceLabel {
+    color: #9da5b5;
 
-    font-size: 11px;
-    line-height: 1.6;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+}
+
+.balance {
+    margin: 0;
+
+    color: #f5c329;
+
+    font-size: clamp(28px, 2.4vw, 39px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -1px;
+    overflow-wrap: anywhere;
 }
 
 /* BUTTON */
@@ -94,9 +129,12 @@
 .button {
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    gap: 9px;
 
-    padding: 11px 17px;
+    width: fit-content;
+    min-height: 38px;
+    padding: 9px 13px;
 
     border: 1px solid rgba(245, 195, 41, 0.45);
     border-radius: 10px;
@@ -135,8 +173,8 @@
 .imageWrapper {
     position: relative;
 
-    width: 145px;
-    height: 155px;
+    width: 148px;
+    min-height: 160px;
 
     display: flex;
     align-items: center;
@@ -183,24 +221,65 @@
 
 @media (max-width: 650px) {
     .card {
-        min-height: 200px;
-        padding: 20px;
+        min-height: 190px;
+        padding: 17px 18px;
+    }
+
+    .content {
+        gap: 10px;
+    }
+
+    .textContent {
+        gap: 9px;
+    }
+
+    .heading {
+        gap: 8px;
+    }
+
+    .headingIcon {
+        width: 28px;
+        height: 28px;
     }
 
     .heading h2 {
-        font-size: 19px;
+        font-size: 17px;
+    }
+
+    .balance {
+        font-size: clamp(27px, 8vw, 34px);
     }
 
     .imageWrapper {
-        width: min(30vw, 120px);
-        height: min(33vw, 130px);
+        width: min(34vw, 122px);
+        min-height: 145px;
     }
 
-    .textContent p {
-        font-size: 10px;
+    .balanceLabel {
+        font-size: 9px;
     }
 
     .button {
-        padding: 10px 14px;
+        padding: 9px 11px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .card {
+        padding: 16px;
+    }
+
+    .content {
+        gap: 6px;
+    }
+
+    .imageWrapper {
+        width: 98px;
+        min-height: 132px;
+    }
+
+    .button {
+        gap: 6px;
     }
 }
